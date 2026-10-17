@@ -1,0 +1,20 @@
+# 6 MVP fault-injection scenarios (setup applied to the simulator)
+scenarios:
+  - id: battery_sag_eclipse
+    setup: { soc: 0.35, eclipse: true }
+    fault: "Battery voltage sagging during eclipse pass"
+  - id: heater_stuck_on
+    setup: { temp_c: 52.0, heater_on: true }
+    fault: "Heater relay stuck on, temperature climbing"
+  - id: wheel_degradation
+    setup: { wheel_health: 0.35 }
+    fault: "Reaction wheel friction rising, health degrading"
+  - id: sensor_drift
+    setup: {}
+    fault: "Magnetometer reading stuck — drift or real field change?"
+  - id: blackout_fault
+    setup: { blackout: true }
+    fault: "Fault during comms blackout — no ground contact possible"
+  - id: payload_computer_crash
+    setup: {}
+    fault: "Payload computer unresponsive, watchdog tripped"

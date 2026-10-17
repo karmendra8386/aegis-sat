@@ -1,0 +1,61 @@
+# AEGIS-Sat gate policies — v0 DRAFT for operator review (K. Pandey)
+# Each action: base tier + conditions. The gate also applies hard invariants
+# and the context-adaptive envelope on top of this file.
+# Tiers: AUTO | AUTO_LOG | ESCALATE | DENY
+
+invariants:
+  battery_floor_soc: 0.20        # never authorise an action predicted to breach this
+  eclipse_battery_floor_soc: 0.30
+  max_temp_c: 60.0               # predicted post-action temperature ceiling
+  min_wheel_health_to_stay_nominal: 0.40
+
+actions:
+  restart_sensor:
+    tier: AUTO
+    reversible: true
+    energy_cost_soc: 0.002
+  shed_payload:
+    tier: AUTO
+    reversible: true
+    energy_cost_soc: 0.0
+  heater_on:
+    tier: AUTO
+    reversible: true
+    energy_cost_soc: 0.004
+  heater_off:
+    tier: AUTO
+    reversible: true
+    energy_cost_soc: 0.0
+  enter_safe_mode:
+    tier: AUTO_LOG
+    reversible: true
+    energy_cost_soc: 0.0
+  switch_redundant_wheel:
+    tier: ESCALATE          # one-way switch: normally a ground decision
+    reversible: false
+    energy_cost_soc: 0.010
+    # DECIDED by K. Pandey 2026-10-11 (Item 6, Option B): if the primary
+    # wheel is dying, waiting for a ground pass risks losing attitude
+    # control — so below this health threshold the gate allows AUTO_LOG.
+    auto_log_if:
+      wheel_health_below: 0.40
+  reboot_payload_computer:
+    tier: AUTO_LOG
+    reversible: true
+    energy_cost_soc: 0.015
+  restore_payload:
+    tier: ESCALATE
+    reversible: true
+    energy_cost_soc: 0.0
+  exit_safe_mode:
+    tier: ESCALATE
+    reversible: true
+    energy_cost_soc: 0.0
+  fire_thruster:
+    tier: ESCALATE
+    reversible: false
+    energy_cost_soc: 0.050
+  deploy_appendage:
+    tier: DENY            # never autonomous in v0 — ground-only, by hand
+    reversible: false
+    energy_cost_soc: 0.030
