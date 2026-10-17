@@ -36,4 +36,4 @@ Framework for Safe Onboard Fault Response.” Preprint: Zenodo, DOI
 [10.5281/zenodo.23420946](https://zenodo.org/records/23420946).
 Peer-review target: *Journal of Space Operations & Communicator*.
 Positioning: Simplex-inspired runtime assurance, translated from flight
-control to LLM fault response — see `../similar-work-and-differentiation.md`.
+control to LLM fault response — see `./similar-work-and-differentiation.md`.
