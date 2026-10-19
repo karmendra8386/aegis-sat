@@ -33,7 +33,7 @@ PYTHONPATH=src .venv/bin/python examples/demo_run.py
 ## Paper
 Karmendra Pandey, “Guarded Autonomy for Satellites: A Policy-Gated AI Agent
 Framework for Safe Onboard Fault Response.” Preprint: Zenodo, DOI
-[10.5281/zenodo.23420946](https://zenodo.org/records/23420946).
+[10.5281/zenodo.23425891](https://zenodo.org/records/23425891).
 Peer-review target: *Journal of Space Operations & Communicator*.
 Positioning: Simplex-inspired runtime assurance, translated from flight
 control to LLM fault response — see `./similar-work-and-differentiation.md`.
