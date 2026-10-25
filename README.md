@@ -37,3 +37,23 @@ Framework for Safe Onboard Fault Response.” Preprint: Zenodo, DOI
 Peer-review target: *Journal of Space Operations & Communicator*.
 Positioning: Simplex-inspired runtime assurance, translated from flight
 control to LLM fault response — see `./similar-work-and-differentiation.md`.
+
+## Cite
+
+If you use this software in your work, please cite the software itself.
+
+**Software**
+
+```bibtex
+@software{pandey_aegis_sat_2026,
+  author = {Pandey, Karmendra},
+  title = {AEGIS-Sat: policy-gated AI agent framework for safe onboard satellite fault response},
+  version = {0.0.1},
+  url = {https://github.com/karmendra8386/aegis-sat},
+  date = {2026-10-17}
+}
+```
+
+The framework is described in the companion preprint: Pandey, K., "Guarded Autonomy for Satellites: A Policy-Gated AI Agent Framework for Safe Onboard Fault Response" — doi:10.5281/zenodo.23425891.
+
+A `CITATION.cff` is included for automated citation tooling.
