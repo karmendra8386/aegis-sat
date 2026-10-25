@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it using the metadata below."
+type: software
+title: "aegis-sat"
+authors:
+  - family-names: Pandey
+    given-names: Karmendra
+    orcid: "https://orcid.org/0009-0000-3461-9889"
+version: 0.0.1
+date-released: 2026-10-17
+repository-code: "https://github.com/karmendra8386/aegis-sat"
+url: "https://github.com/karmendra8386/aegis-sat"
+license: MIT
+abstract: "A policy-gated AI agent framework for safe onboard satellite fault response. An AI agent proposes fault-recovery actions; a deterministic policy gate — human-readable YAML written and signed by operators — rules on every proposal (AUTO, AUTO+LOG, ESCALATE, DENY) under a context-adaptive autonomy envelope, and every proposal and decision is written to a tamper-evident audit ledger. Research prototype: simulation only, not flight software. Code for the Zenodo preprint 'Guarded Autonomy for Satellites' (DOI 10.5281/zenodo.23425891)."
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.23425891
+    description: "Companion preprint (Guarded Autonomy for Satellites)"
